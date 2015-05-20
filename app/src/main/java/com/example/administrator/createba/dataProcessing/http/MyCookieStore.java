@@ -6,9 +6,11 @@ import java.net.URI;
 import java.util.List;
 
 /**
- * Created by Administrator on 2015/5/20.
+ * CookieStore用于储存cookie
+ * Created by C.jiuxu on 2015/5/20.
  */
-public class test  implements CookieStore{
+public class MyCookieStore implements CookieStore {
+
     @Override
     public void add(URI uri, HttpCookie httpCookie) {
 
