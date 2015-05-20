@@ -14,7 +14,7 @@ public class Constant {
     public static class ConstantAccount {
         public static String ACCOUNT_TYPE = "com.example.administrator.createba.basisaccounttype";//账户类型
         public static String TOKEN_TYPE = applicationId + "tokentype";//token类型
-        public static String LOGIN_ACTIVITY_NAME = applicationId + "loginactivityname";//token类型
+        public static String TOKIN_ACTIVITY_NAME = applicationId + "loginactivityname";//token类型
         public static String TOKEN_ACTIVITY_TYPE = applicationId + "TokenactivityType";//token类型
 
 

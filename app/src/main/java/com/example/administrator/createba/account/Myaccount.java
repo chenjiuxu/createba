@@ -77,7 +77,7 @@ public class Myaccount extends AbstractAccountAuthenticator {//抽象的账户�
         }
         //如果以上都没有执行就跳转到登陆界面用户登录获得token值
         Intent intent = new Intent(context, LoginActivity.class);
-        intent.putExtra(Constant.ConstantAccount.LOGIN_ACTIVITY_NAME, account.name);
+        intent.putExtra(Constant.ConstantAccount.TOKIN_ACTIVITY_NAME, account.name);
         intent.putExtra(Constant.ConstantAccount.TOKEN_ACTIVITY_TYPE, authTokenType);
         intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, accountAuthenticatorResponse);
         Bundle serverBundle = new Bundle();
