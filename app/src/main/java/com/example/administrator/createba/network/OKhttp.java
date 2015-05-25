@@ -135,4 +135,15 @@ public class OKhttp {
                 .build();
         asyncRequest(request, myCallback);
     }
+
+    /**
+     * get请求
+     */
+    public static void asyncGet(String url, Callback callback) {
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        asyncRequest(request, callback);
+    }
+
 }
