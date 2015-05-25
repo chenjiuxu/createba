@@ -1,5 +1,7 @@
 package com.example.administrator.createba.appbasis;
 
+import com.squareup.okhttp.MediaType;
+
 /**
  * 程序中的常量数据
  * Created by C.jiuxu on 2015/5/15.
@@ -25,7 +27,7 @@ public class Constant {
      */
     public static class ConstantOkhttp {
         public static final long MAXSIZE = 1024 * 1024 * 10; //缓存
-
+        public static final String MEDIA_TYPE_PNG = "image/png";//上传图片格式
 
     }
 
