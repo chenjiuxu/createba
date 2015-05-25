@@ -24,7 +24,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 判断网络环境 网络访问 数据传输的工具类
+ *  网络访问 数据传输类
  * Created by C.jiuxu on 2015/5/20.
  */
 public class OKhttp {
