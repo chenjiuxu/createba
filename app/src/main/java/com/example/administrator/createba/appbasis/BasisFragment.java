@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Administrator on 2015/5/18.
+ * Created by C.jiuxu on 2015/5/18.
  */
 public abstract class BasisFragment extends Fragment {
 
