@@ -1,7 +1,7 @@
 package com.example.administrator.createba.network;
 
 /**
- * OkhttpÒì²½ÍøÂçÇëÇóµÄÏàÓ¦ÀàÖ´ĞĞÔÚ×ÓÏß³ÌÖ®ÖĞ
+ * Okhttpå¼‚æ­¥ç½‘ç»œè¯·æ±‚çš„ç›¸åº”ç±»æ‰§è¡Œåœ¨å­çº¿ç¨‹ä¹‹ä¸­
  * Created by C.jiuxu on 2015/5/25.
  */
 
@@ -26,7 +26,7 @@ public abstract class MyCallback implements Callback {
 
 
     @Override
-    public void onFailure(Request request, IOException e) {//ÍøÂçÇëÇóÊ§°Ü
+    public void onFailure(Request request, IOException e) {//ç½‘ç»œè¯·æ±‚å¤±è´¥
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -38,11 +38,11 @@ public abstract class MyCallback implements Callback {
     }
 
     @Override
-    public void onResponse(Response response) throws IOException {//ÇëÇó³É¹¦
+    public void onResponse(Response response) throws IOException {//è¯·æ±‚æˆåŠŸ
         String json = response.body().string();
         if (aClass != null) {
             Gson gson = new Gson();
-            gson.fromJson(json, aClass);//´¢´æÊı¾İµ½ÊµÌåÀà
+            gson.fromJson(json, aClass);//å‚¨å­˜æ•°æ®åˆ°å®ä½“ç±»
         }
         activity.runOnUiThread(new Runnable() {
             @Override
@@ -53,14 +53,14 @@ public abstract class MyCallback implements Callback {
     }
 
     /**
-     * ÍøÂçÇëÇóÊ§°ÜºóÖ´ĞĞ
-     * Ö÷Ïß³Ì
+     * ç½‘ç»œè¯·æ±‚å¤±è´¥åæ‰§è¡Œ
+     * ä¸»çº¿ç¨‹
      */
     public abstract void failure();
 
     /**
-     * ÍøÂçÇëÇó½á¹û¡¢
-     * Ö÷Ïß³Ì
+     * ç½‘ç»œè¯·æ±‚ç»“æœã€
+     * ä¸»çº¿ç¨‹
      */
     public abstract void response();
 
