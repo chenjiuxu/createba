@@ -31,5 +31,8 @@ public class Constant {
 
     }
 
+    public static class ConstantTools {
+        public static final String PHOTO_SAVE_IMAGE = "/测试";//用户图片保存文件名字
+    }
 
 }
