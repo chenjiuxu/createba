@@ -6,7 +6,6 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/account/AccountTools.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/account/LoginActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/account/Myaccount.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/account/RemoveAccount.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/activitys/MainActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/appbasis/BasisActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/appbasis/BasisFragment.java" charset="UTF-8" />
@@ -17,6 +16,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/network/MyCookieStore.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/network/OKhttp.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/tools/DateTools.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/tools/IsNetwork.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/tools/PhotoAlbum.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/basis_toobar.xml" charset="UTF-8" />

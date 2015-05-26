@@ -5,14 +5,14 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * ÍøÂç×´Ì¬ÅĞ¶ÏÀà£¨WIFI 2G 3G....£©
+ * ç½‘ç»œçŠ¶æ€åˆ¤æ–­ç±»ï¼ˆWIFI 2G 3G....ï¼‰
  * Created by C.jiuxu on 2015/5/25.
  */
 public class IsNetwork {
 
 
     /**
-     * ÅĞ¶ÏÊÇ·ñÓĞÍøÂç
+     * åˆ¤æ–­æ˜¯å¦æœ‰ç½‘ç»œ
      */
     public Boolean isNetworkConnected(Context context) {
         if (context != null) {
@@ -30,7 +30,7 @@ public class IsNetwork {
      * @param context
      * @return
      * @author sky
-     * »ñÈ¡µ±Ç°µÄÍøÂç×´Ì¬  -1£ºÃ»ÓĞÍøÂç  1£ºWIFIÍøÂç2£ºwapÍøÂç3£ºnetÍøÂç
+     * è·å–å½“å‰çš„ç½‘ç»œçŠ¶æ€  -1ï¼šæ²¡æœ‰ç½‘ç»œ  1ï¼šWIFIç½‘ç»œ2ï¼šwapç½‘ç»œ3ï¼šnetç½‘ç»œ
      */
     public int getAPNType(Context context) {
         int netType = -1;
