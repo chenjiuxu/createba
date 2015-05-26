@@ -32,5 +32,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.0.0'
     //okhttp连网
     compile 'com.squareup.okhttp:okhttp:2.3.0'
+    //gson网络数据解析
     compile 'com.google.code.gson:gson:2.3.1'
 }
