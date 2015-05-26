@@ -13,8 +13,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
-
 import com.example.administrator.createba.R;
 import com.umeng.analytics.MobclickAgent;
 
@@ -28,6 +26,7 @@ import java.io.IOException;
  */
 public abstract class BasisActivity extends ActionBarActivity implements View.OnClickListener ,BasisFragment.FragmentCallbacks{
     private Toolbar toolbar;
+    public String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +94,6 @@ public abstract class BasisActivity extends ActionBarActivity implements View.On
                 Constant.ConstantAccount.TOKEN_TYPE,
                 new String[0], this, null, null, new callback(),
                 null);
-        Toast.makeText(this, "运行没有！", Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -143,12 +141,12 @@ public abstract class BasisActivity extends ActionBarActivity implements View.On
      * 获得token
      */
     private class callback implements AccountManagerCallback<Bundle> {
+
         @Override
         public void run(AccountManagerFuture<Bundle> future) {
             try {
                 Bundle bundle = future.getResult();
-                String token = bundle.getString(AccountManager.KEY_AUTHTOKEN);//获得token
-                Toast.makeText(BasisActivity.this, token, Toast.LENGTH_SHORT).show();
+                 token = bundle.getString(AccountManager.KEY_AUTHTOKEN);//获得token
             } catch (OperationCanceledException e) {
                 e.printStackTrace();
             } catch (IOException e) {

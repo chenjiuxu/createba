@@ -84,13 +84,8 @@ public class LoginActivity extends BasisActivity {
 
         switch (view.getId()) {
             case R.id.activity_login_bt:
-
                 setToken("陈玖旭", "成功！！！！");
-                ;
-
-
         }
-
     }
 
     @Override
@@ -103,7 +98,7 @@ public class LoginActivity extends BasisActivity {
     }
 
     /**
-     * 设置系统账户保存token值
+     * 增加账户 设置系统账户保存token值
      */
     private void setToken(String name, String password) {
 

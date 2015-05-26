@@ -12,9 +12,10 @@
         <include layout="@layout/basis_toobar" />
 
         <TextView
+            android:id="@+id/activty_main_tv1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_world"
+            android:layout_height="48dp"
+            android:text="删除账户"
             android:textColor="@android:color/background_dark" />
 
     </github.chenupt.dragtoplayout.DragTopLayout>

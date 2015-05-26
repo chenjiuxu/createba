@@ -39,6 +39,11 @@
             </intent-filter>
         </activity>
 
+        <provider
+            android:name=".contentprovider.MyContentProvider"
+            android:authorities="com.example.administrator.createba.contentprovider.MyContentProvider"
+            android:exported="false"></provider>
+        <!--android:exported="false" 不对第三方公开-->
 
         <!-- 账户管理-->
         <activity

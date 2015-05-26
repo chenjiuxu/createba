@@ -1,6 +1,5 @@
 package com.example.administrator.createba.appbasis;
 
-import com.squareup.okhttp.MediaType;
 
 /**
  * 程序中的常量数据
@@ -44,6 +43,10 @@ public class Constant {
     public static class ConstantSqlite {
         public static final String DB_HELPER_NAME = "createba";//数据库name
         public static final int DB_HELPER_VERSION = 1;//数据库版本
+
+
+        public static final String SQL_COLUMN_ID = "_id";//sql数据库规定id为_id
+        public static final String SQL_HEAD_URI = "content://";//sql数据库规定uri头部为content://
     }
 
 }
