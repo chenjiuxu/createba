@@ -13,24 +13,36 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
 import com.example.administrator.createba.R;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.message.PushAgent;
 
 import java.io.IOException;
-
 
 
 /**
  * 所有activity的父类 其之类的布局的布局文件中要有     <include layout="@layout/basis_toobar" />
  * Created C.jiuxu on 2015/5/15.
  */
-public abstract class BasisActivity extends ActionBarActivity implements View.OnClickListener ,BasisFragment.FragmentCallbacks{
+public abstract class BasisActivity extends ActionBarActivity implements View.OnClickListener, BasisFragment.FragmentCallbacks {
     private Toolbar toolbar;
     public String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        PushAgent mPushAgent = PushAgent.getInstance(this);
+        mPushAgent.enable();//开启友盟推送服务
+
+        PushAgent.getInstance(this).onAppStart();//统计
+
+        PushAgent.getInstance(this).setMergeNotificaiton(false);//显示多条消息
+
+        PushAgent.getInstance(this).setMuteDurationSeconds(60);//多条消息推送 间隔多少秒显示!
+
+
         setContentView(setview());
         dataTransferManage(getIntent());
         setToolbar();
@@ -38,7 +50,6 @@ public abstract class BasisActivity extends ActionBarActivity implements View.On
         initial();
         logic();
     }
-
 
 
     @Override
@@ -129,7 +140,7 @@ public abstract class BasisActivity extends ActionBarActivity implements View.On
     /**
      * 要设置 android:launchmode="singleTask"
      * 用于activity之间数据的传递
-     * <p>
+     * <p/>
      * A条B  activity B 向A传数据
      * Intent it = new Intent(B.this, B.class);
      * it.put("",数据)
@@ -146,7 +157,7 @@ public abstract class BasisActivity extends ActionBarActivity implements View.On
         public void run(AccountManagerFuture<Bundle> future) {
             try {
                 Bundle bundle = future.getResult();
-                 token = bundle.getString(AccountManager.KEY_AUTHTOKEN);//获得token
+                token = bundle.getString(AccountManager.KEY_AUTHTOKEN);//获得token
             } catch (OperationCanceledException e) {
                 e.printStackTrace();
             } catch (IOException e) {
