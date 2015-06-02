@@ -61,7 +61,6 @@ public class PhotoAlbum {
             path.mkdirs();
         }
         String time = DateTools.getDateToString("yyyyMMddHHmmssSS");
-
         File file = new File(path, time + ".png");
         BufferedOutputStream bos;
         try {
