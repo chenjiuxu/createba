@@ -1,7 +1,7 @@
 package com.example.administrator.createba.network;
 
 /**
- * Okhttp异步网络请求的相应类执行在子线程之中
+ * Okhttp异步网络请求的相应类执行在子线程之中 jackson数据解析
  * Created by C.jiuxu on 2015/5/25.
  */
 

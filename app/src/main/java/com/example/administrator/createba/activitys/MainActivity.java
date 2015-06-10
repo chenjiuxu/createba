@@ -1,7 +1,10 @@
 package com.example.administrator.createba.activitys;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -10,14 +13,13 @@ import android.widget.Toast;
 import com.example.administrator.createba.R;
 import com.example.administrator.createba.account.AccountTools;
 import com.example.administrator.createba.appbasis.BasisActivity;
-import com.umeng.message.PushAgent;
 import com.umeng.message.UmengRegistrar;
 
 
 import github.chenupt.dragtoplayout.DragTopLayout;
 
 
-public class MainActivity extends BasisActivity {
+public class MainActivity extends BasisActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     @Override
     public int setview() {
@@ -45,6 +47,8 @@ public class MainActivity extends BasisActivity {
         View bt = findViewById(R.id.activty_main_tv1);
         bt.setOnClickListener(this);
         dragLayout.setOverDrag(false);
+
+        getSupportLoaderManager().initLoader(0, null, this);//同步数据库
     }
 
     @Override
@@ -73,6 +77,22 @@ public class MainActivity extends BasisActivity {
 
     @Override
     public void callbacks(Bundle bundle) {
+
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {//查询数据库
+//        CursorLoader cursorLoader=new CursorLoader(this, Uri.parse(""),null,null,null,null);
+        return null;
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {//干嘛
+
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {//干完了
 
     }
 }
