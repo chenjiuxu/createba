@@ -72,7 +72,7 @@ public abstract class BasisActivity extends ActionBarActivity implements View.On
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
-        dataTransferManage(getIntent());
+        dataTransferManage(intent);
     }
 
     @Override
@@ -139,7 +139,7 @@ public abstract class BasisActivity extends ActionBarActivity implements View.On
 
     /**
      * 要设置 android:launchmode="singleTask"
-     * 用于activity之间数据的传递
+     * 用于activity之间数据的传递    质料参考http://blog.csdn.net/smqh2011/article/details/8700214
      * <p/>
      * A条B  activity B 向A传数据
      * Intent it = new Intent(B.this, B.class);

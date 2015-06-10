@@ -17,7 +17,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {//创建数据库
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {//创建数据库 建表
 
     }
 
