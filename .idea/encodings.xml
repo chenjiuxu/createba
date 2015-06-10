@@ -11,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/appbasis/BasisFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/appbasis/Constant.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/contentprovider/MyContentProvider.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/db/MyContentProvider.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/db/MyDBHelper.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/network/MyCallback.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/createba/network/MyCookieStore.java" charset="UTF-8" />

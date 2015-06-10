@@ -1,4 +1,4 @@
-package com.example.administrator.createba.contentprovider;
+package com.example.administrator.createba.db;
 
 import android.content.ContentProvider;
 import android.content.ContentResolver;
@@ -17,11 +17,12 @@ import com.example.administrator.createba.db.MyDBHelper;
 public class MyContentProvider extends ContentProvider {
     private MyDBHelper dbHelper;
     private static UriMatcher uriMatcher;
+    public static String CONTENT_PROVIDER = "com.example.administrator.createba.db.MyContentProvider";
 
     static {
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        uriMatcher.addURI("com.example.administrator.createba.contentprovider.MyContentProvider", "test", 1);//包名  制定以
-        uriMatcher.addURI("com.example.administrator.createba.contentprovider.MyContentProvider", "test/#", 2);
+        uriMatcher.addURI(CONTENT_PROVIDER, "test", 1);//包名  第二个参数为一般为表名
+        uriMatcher.addURI(CONTENT_PROVIDER, "test/#", 2);
     }
 
 
@@ -45,7 +46,7 @@ public class MyContentProvider extends ContentProvider {
     }
 
     @Override
-    public String getType(Uri uri) {//？？？？？？？？？
+    public String getType(Uri uri) {//得到数据类型
         String type;
         int tag = uriMatcher.match(uri);
         switch (tag) {
