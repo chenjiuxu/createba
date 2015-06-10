@@ -23,6 +23,7 @@ public class BasisApplication extends Application {
 
     /**
      * 提供上下文对象的方法
+     * @return 上下文对象
      */
     public static Context getContext() {
         return getContext();
@@ -30,6 +31,7 @@ public class BasisApplication extends Application {
 
     /**
      * 初始化图片缓存
+     * @param context
      */
     public void setImageLoader(Context context) {
         // 图像处理

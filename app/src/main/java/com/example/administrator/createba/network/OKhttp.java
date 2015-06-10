@@ -27,7 +27,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- *  网络访问 数据传输类
+ * 网络访问 数据传输类
  * Created by C.jiuxu on 2015/5/20.
  */
 public class OKhttp {
@@ -45,13 +45,19 @@ public class OKhttp {
 
     /**
      * 网络同步请求
+     *
+     * @param request
+     * @return 网络同步请求结果
+     * @throws IOException
      */
     public static Response syncRequest(Request request) throws IOException {
         return okHttpClient.newCall(request).execute();
     }
 
     /**
-     * 异步网络请求
+     * 发起异步请求
+     * @param request
+     * @param callback
      */
     public static void asyncRequest(Request request, Callback callback) {
         okHttpClient.newCall(request).enqueue(callback);
@@ -59,6 +65,11 @@ public class OKhttp {
 
     /**
      * 同步post 无文件提交
+     *
+     * @param url 网络访问路径
+     * @param map 网络访问参数
+     * @return 网络请求结果
+     * @throws IOException
      */
     public static Response syncPost(String url, Map<String, String> map) throws IOException {
         FormEncodingBuilder formEncodingBuilder = new FormEncodingBuilder();
@@ -76,6 +87,10 @@ public class OKhttp {
 
     /**
      * 异步post 无文件提交
+     *
+     * @param url        网络访问路径
+     * @param map        网络访问参数
+     * @param myCallback 网络返回封装类
      */
     public static void asyncPost(String url, Map<String, String> map, MyCallback myCallback) {
         FormEncodingBuilder formEncodingBuilder = new FormEncodingBuilder();
@@ -93,6 +108,11 @@ public class OKhttp {
 
     /**
      * 异步post单图片上传
+     *
+     * @param url        网络访问路径
+     * @param map        网络访问参数
+     * @param file       封装图片本地路径
+     * @param myCallback 网络返回结果封装类
      */
     public static void asyncPsotFile(String url, Map<String, String> map, String file, MyCallback myCallback) {
         MultipartBuilder multipartBuilder = new MultipartBuilder();
@@ -117,6 +137,11 @@ public class OKhttp {
 
     /**
      * 异步post批量上传图片
+     *
+     * @param url        网络访问路径
+     * @param map        网络访问参数
+     * @param files      封装图片本地路径
+     * @param myCallback 网络返回结果封装类
      */
     public static void asyncPsotFiles(String url, Map<String, String> map, List<String> files, MyCallback myCallback) {
         MultipartBuilder multipartBuilder = new MultipartBuilder();
@@ -141,6 +166,9 @@ public class OKhttp {
 
     /**
      * get请求
+     *
+     * @param url      网络访问路径
+     * @param callback 网络返回结果封装类
      */
     public static void asyncGet(String url, Callback callback) {
         Request request = new Request.Builder()
@@ -152,7 +180,7 @@ public class OKhttp {
     // 根据路径获得图片并压缩，返回bitmap用于显示
     public static byte[] getSmallBitmap(String filePath) {
         final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inPreferredConfig= Bitmap.Config.RGB_565;//加这个
+        options.inPreferredConfig = Bitmap.Config.RGB_565;//加这个
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(filePath, options);
         options.inSampleSize = calculateInSampleSize(options, 480, 800);
@@ -162,6 +190,7 @@ public class OKhttp {
         bitmap.compress(Bitmap.CompressFormat.JPEG, 60, baos);
         return baos.toByteArray();
     }
+
     //计算图片的缩放值
     public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
         final int height = options.outHeight;
@@ -174,8 +203,6 @@ public class OKhttp {
         }
         return inSampleSize;
     }
-
-
 
 
 }

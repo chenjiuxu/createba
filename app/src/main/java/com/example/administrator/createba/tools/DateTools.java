@@ -13,7 +13,8 @@ public class DateTools {
 
     /**
      * 获得当前时间格式化指定字符串
-     * format: 时间格式  如yyyyMMddHHmmssSS
+     * @param format : 时间格式  如yyyyMMddHHmmssSS
+     * @return 格式化的时间字符串
      */
     public static String getDateToString(String format) {
         Date date = new Date();
@@ -26,8 +27,10 @@ public class DateTools {
 
     /**
      * 格式化字符串为dated
-     * format: 时间格式
-     * s:要格式的字符串
+     * @param format 时间格式
+     * @param s      要格式的字符串
+     * @return Date类
+     * @throws ParseException
      */
     public static Date formatStringToDate(String format, String s) throws ParseException {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);

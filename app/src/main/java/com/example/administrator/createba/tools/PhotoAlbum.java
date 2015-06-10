@@ -9,8 +9,10 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.widget.Toast;
+
 import com.example.administrator.createba.BasisApplication;
 import com.example.administrator.createba.appbasis.Constant;
+
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,6 +28,9 @@ public class PhotoAlbum {
 
     /**
      * 浏览相册（跳转至相册）
+     *
+     * @param activity
+     * @param requestCode 请求码
      */
     public void browsePhoto(Activity activity, int requestCode) {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -34,10 +39,12 @@ public class PhotoAlbum {
 
     /**
      * 获得相册被选中图片的路径
-     * <p/>
+     * <p>
      * 在onActivityResult   if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) 通过调用
-     * <p/>
-     * return : 选中图片的路径
+     * <p>
+     *
+     * @param data 系统相册返回的对象
+     * @return 选中图片的路径
      */
     public String getSelectedPhoto(Intent data) {
         Uri selectedImage = data.getData();
@@ -53,6 +60,9 @@ public class PhotoAlbum {
 
     /**
      * 传入bitmap 保存到相册
+     *
+     * @param activity
+     * @param bitmap   要保存的对象
      */
     public void saveImageToPhoto(Activity activity, Bitmap bitmap) {
         File sdDir = Environment.getExternalStorageDirectory();

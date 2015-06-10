@@ -13,6 +13,9 @@ public class IsNetwork {
 
     /**
      * 判断是否有网络
+     *
+     * @param context
+     * @return false 没有网络
      */
     public Boolean isNetworkConnected(Context context) {
         if (context != null) {
@@ -27,10 +30,11 @@ public class IsNetwork {
     }
 
     /**
+     * 获取当前的网络状态
+     *
      * @param context
-     * @return
+     * @return -1：没有网络  1：WIFI网络2：wap网络3：net网络
      * @author sky
-     * 获取当前的网络状态  -1：没有网络  1：WIFI网络2：wap网络3：net网络
      */
     public int getAPNType(Context context) {
         int netType = -1;

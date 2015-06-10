@@ -47,6 +47,9 @@ public class ImageLoaderTools {
 
     /**
      * 加载图片
+     *
+     * @param url       图片的网络地址
+     * @param imageview 要加载图片的容器
      */
     private void imageLoader(String url, ImageView imageview) {
         ImageLoader.getInstance().displayImage(url, imageview, options);
@@ -54,6 +57,10 @@ public class ImageLoaderTools {
 
     /**
      * 自适应图片加载
+     *
+     * @param url       图片的网络地址
+     * @param imageview 要加载图片的容器
+     * @param mPtions   加载图片是的参数设置
      */
     private void imageLoaderOptions(String url, ImageView imageview, DisplayImageOptions mPtions) {
         ImageLoader.getInstance().displayImage(url, imageview, mPtions);
@@ -61,6 +68,10 @@ public class ImageLoaderTools {
 
     /**
      * 图片加载 图片处理
+     *
+     * @param url       图片的网络地址
+     * @param imageview 要加载图片的容器
+     * @param listener  加载完成后的图片监听
      */
     private void imageLoaderlistener(String url, ImageView imageview, ImageLoadingListener listener) {
         ImageLoader.getInstance().displayImage(url, imageview, options, listener);
