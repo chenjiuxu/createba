@@ -45,7 +45,6 @@ public class OKhttp {
 
     /**
      * 网络同步请求
-     *
      * @param request
      * @return 网络同步请求结果
      * @throws IOException
@@ -183,11 +182,11 @@ public class OKhttp {
         options.inPreferredConfig = Bitmap.Config.RGB_565;//加这个
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(filePath, options);
-        options.inSampleSize = calculateInSampleSize(options, 480, 800);
+        options.inSampleSize = calculateInSampleSize(options, 720, 1080);
         options.inJustDecodeBounds = false;
         Bitmap bitmap = BitmapFactory.decodeFile(filePath, options);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 60, baos);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 40, baos);
         return baos.toByteArray();
     }
 

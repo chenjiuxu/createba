@@ -8,7 +8,7 @@ import com.example.administrator.createba.appbasis.Constant;
 import com.example.administrator.createba.db.MyContentProvider;
 
 /**
- * ¶¨Òå¸÷¸öÊı¾İ±í °üº¬ ´´½¨Êı¾İ¿â É¾³ıÊı¾İ¿â ÔöÉ¾¸Ä²é ÒÔ¼°³£Á¿µÈ
+ * å®šä¹‰å„ä¸ªæ•°æ®è¡¨ åŒ…å« åˆ›å»ºæ•°æ®åº“ åˆ é™¤æ•°æ®åº“ å¢åˆ æ”¹æŸ¥ ä»¥åŠå¸¸é‡ç­‰
  * Created by C.jiuxu on 2015/6/10.
  */
 public class MySqlite {
@@ -16,31 +16,31 @@ public class MySqlite {
     private static final String TEXT_TYPE = " TEXT,";
     private static final String INT_TYPE = " INTEGER,";
 
-    public static String SQL_TABLE_NAME = "MySqlite";//±íÃû
-    public static Uri MYSQLITE_URL = Uri.parse(MyContentProvider.CONTENT_PROVIDER + "/" + SQL_TABLE_NAME);//Ö¸ÏòÕâÕÅ±íµÄuri
-    public static Uri MYSQLITE_URL_MORE = Uri.parse(MyContentProvider.CONTENT_PROVIDER + "/" + SQL_TABLE_NAME + "/#");//Ö¸ÏòÕâÕÅ±íµÄuri
+    public static String SQL_TABLE_NAME = "MySqlite";//è¡¨å
+    public static Uri MYSQLITE_URL = Uri.parse(MyContentProvider.CONTENT_PROVIDER + "/" + SQL_TABLE_NAME);//æŒ‡å‘è¿™å¼ è¡¨çš„uri
+    public static Uri MYSQLITE_URL_MORE = Uri.parse(MyContentProvider.CONTENT_PROVIDER + "/" + SQL_TABLE_NAME + "/#");//æŒ‡å‘è¿™å¼ è¡¨çš„uri
     private static MySqlite mySqlite;
 
     /**
-     * ±íµÄÁĞÃû
+     * è¡¨çš„åˆ—å
      * <p>
      * <p>
      * <p>
-     * Ã»ÓĞĞ´°¡£¡
+     * æ²¡æœ‰å†™å•Šï¼
      */
 
 
     public static final String CREATE_TABLE = "CREATE TABLE " + SQL_TABLE_NAME + "(" + Constant.ConstantSqlite.SQL_COLUMN_ID + " INTEGER PRIMARY KEY,"
             + "" + TEXT_TYPE +
-            "" + " INTEGER" + ");";//½¨±í ¶Ô±íµÄÉè¼Æ
+            "" + " INTEGER" + ");";//å»ºè¡¨ å¯¹è¡¨çš„è®¾è®¡
 
-    public static final String DELETE_TABLE = "DROP TABLE IF EXISTS " + SQL_TABLE_NAME;//É¾³ı±í
+    public static final String DELETE_TABLE = "DROP TABLE IF EXISTS " + SQL_TABLE_NAME;//åˆ é™¤è¡¨
 
     private MySqlite() {
     }
 
     /**
-     * µ¥ÀıÄ£Ê½
+     * å•ä¾‹æ¨¡å¼
      */
     public static MySqlite getMySqlite() {
         if (mySqlite == null) {
@@ -50,7 +50,7 @@ public class MySqlite {
     }
 
     /**
-     * ²éÑ¯Êı¾İ
+     * æŸ¥è¯¢æ•°æ®
      * @param db
      * @param projection
      * @param selection

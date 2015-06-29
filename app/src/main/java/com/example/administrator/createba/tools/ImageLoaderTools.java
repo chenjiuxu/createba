@@ -10,33 +10,33 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 /**
- * ÍøÂçÍ¼Æ¬¼ÓÔØÀà µ¥ÀıÄ£Ê½
+ * ç½‘ç»œå›¾ç‰‡åŠ è½½ç±» å•ä¾‹æ¨¡å¼
  * Created by C.jiuxu on 2015/6/10.
  */
 public class ImageLoaderTools {
     private static ImageLoaderTools imageLoaderTools;
     private DisplayImageOptions options = new DisplayImageOptions.Builder()
-//          .showImageOnLoading(R.drawable.loading) //ÉèÖÃÍ¼Æ¬ÔÚÏÂÔØÆÚ¼äÏÔÊ¾µÄÍ¼Æ¬
-//          .showImageForEmptyUri(R.drawable.ic_launcher)//ÉèÖÃÍ¼Æ¬UriÎª¿Õ»òÊÇ´íÎóµÄÊ±ºòÏÔÊ¾µÄÍ¼Æ¬
-//          .showImageOnFail(R.drawable.error)  //ÉèÖÃÍ¼Æ¬¼ÓÔØ/½âÂë¹ı³ÌÖĞ´íÎóÊ±ºòÏÔÊ¾µÄÍ¼Æ¬
-            .cacheInMemory(true)//ÉèÖÃÏÂÔØµÄÍ¼Æ¬ÊÇ·ñ»º´æÔÚÄÚ´æÖĞ
-            .cacheOnDisk(true)//ÉèÖÃÏÂÔØµÄÍ¼Æ¬ÊÇ·ñ»º´æÔÚSD¿¨ÖĞ
-            .considerExifParams(true)  //ÊÇ·ñ¿¼ÂÇJPEGÍ¼ÏñEXIF²ÎÊı£¨Ğı×ª£¬·­×ª£©
-            .imageScaleType(ImageScaleType.IN_SAMPLE_INT)//ÉèÖÃÍ¼Æ¬ÒÔÈçºÎµÄ±àÂë·½Ê½ÏÔÊ¾
-            .bitmapConfig(Bitmap.Config.RGB_565)//ÉèÖÃÍ¼Æ¬µÄ½âÂëÀàĞÍ
-//          .decodingOptions(BitmapFactory.Options decodingOptions)//ÉèÖÃÍ¼Æ¬µÄ½âÂëÅäÖÃ
-            .delayBeforeLoading(0)//int delayInMillisÎªÄãÉèÖÃµÄÏÂÔØÇ°µÄÑÓ³ÙÊ±¼ä
-//          .preProcessor(BitmapProcessor preProcessor)  ÉèÖÃÍ¼Æ¬¼ÓÈë»º´æÇ°£¬¶Ôbitmap½øĞĞÉèÖÃ
-            .resetViewBeforeLoading(true)//ÉèÖÃÍ¼Æ¬ÔÚÏÂÔØÇ°ÊÇ·ñÖØÖÃ£¬¸´Î»
-//          .displayer(new RoundedBitmapDisplayer(20))//²»ÍÆ¼öÓÃ£¡£¡£¡£¡ÊÇ·ñÉèÖÃÎªÔ²½Ç£¬»¡¶ÈÎª¶àÉÙ »á¹ı¶àÔİÓÃÄÚ´æ
-            .displayer(new FadeInBitmapDisplayer(100))//ÊÇ·ñÍ¼Æ¬¼ÓÔØºÃºó½¥ÈëµÄ¶¯»­Ê±¼ä£¬¿ÉÄÜ»á³öÏÖÉÁ¶¯
-            .build();//¹¹½¨Íê³É
+//          .showImageOnLoading(R.drawable.loading) //è®¾ç½®å›¾ç‰‡åœ¨ä¸‹è½½æœŸé—´æ˜¾ç¤ºçš„å›¾ç‰‡
+//          .showImageForEmptyUri(R.drawable.ic_launcher)//è®¾ç½®å›¾ç‰‡Uriä¸ºç©ºæˆ–æ˜¯é”™è¯¯çš„æ—¶å€™æ˜¾ç¤ºçš„å›¾ç‰‡
+//          .showImageOnFail(R.drawable.error)  //è®¾ç½®å›¾ç‰‡åŠ è½½/è§£ç è¿‡ç¨‹ä¸­é”™è¯¯æ—¶å€™æ˜¾ç¤ºçš„å›¾ç‰‡
+            .cacheInMemory(true)//è®¾ç½®ä¸‹è½½çš„å›¾ç‰‡æ˜¯å¦ç¼“å­˜åœ¨å†…å­˜ä¸­
+            .cacheOnDisk(true)//è®¾ç½®ä¸‹è½½çš„å›¾ç‰‡æ˜¯å¦ç¼“å­˜åœ¨SDå¡ä¸­
+            .considerExifParams(true)  //æ˜¯å¦è€ƒè™‘JPEGå›¾åƒEXIFå‚æ•°ï¼ˆæ—‹è½¬ï¼Œç¿»è½¬ï¼‰
+            .imageScaleType(ImageScaleType.IN_SAMPLE_INT)//è®¾ç½®å›¾ç‰‡ä»¥å¦‚ä½•çš„ç¼–ç æ–¹å¼æ˜¾ç¤º
+            .bitmapConfig(Bitmap.Config.RGB_565)//è®¾ç½®å›¾ç‰‡çš„è§£ç ç±»å‹
+//          .decodingOptions(BitmapFactory.Options decodingOptions)//è®¾ç½®å›¾ç‰‡çš„è§£ç é…ç½®
+            .delayBeforeLoading(0)//int delayInMillisä¸ºä½ è®¾ç½®çš„ä¸‹è½½å‰çš„å»¶è¿Ÿæ—¶é—´
+//          .preProcessor(BitmapProcessor preProcessor)  è®¾ç½®å›¾ç‰‡åŠ å…¥ç¼“å­˜å‰ï¼Œå¯¹bitmapè¿›è¡Œè®¾ç½®
+            .resetViewBeforeLoading(true)//è®¾ç½®å›¾ç‰‡åœ¨ä¸‹è½½å‰æ˜¯å¦é‡ç½®ï¼Œå¤ä½
+//          .displayer(new RoundedBitmapDisplayer(20))//ä¸æ¨èç”¨ï¼ï¼ï¼ï¼æ˜¯å¦è®¾ç½®ä¸ºåœ†è§’ï¼Œå¼§åº¦ä¸ºå¤šå°‘ ä¼šè¿‡å¤šæš‚ç”¨å†…å­˜
+            .displayer(new FadeInBitmapDisplayer(100))//æ˜¯å¦å›¾ç‰‡åŠ è½½å¥½åæ¸å…¥çš„åŠ¨ç”»æ—¶é—´ï¼Œå¯èƒ½ä¼šå‡ºç°é—ªåŠ¨
+            .build();//æ„å»ºå®Œæˆ
 
     private ImageLoaderTools() {
     }
 
     /**
-     * µ¥ÀıÄ£Ê½
+     * å•ä¾‹æ¨¡å¼
      */
     public static ImageLoaderTools getImageLoader() {
         if (imageLoaderTools == null) {
@@ -46,32 +46,32 @@ public class ImageLoaderTools {
     }
 
     /**
-     * ¼ÓÔØÍ¼Æ¬
+     * åŠ è½½å›¾ç‰‡
      *
-     * @param url       Í¼Æ¬µÄÍøÂçµØÖ·
-     * @param imageview Òª¼ÓÔØÍ¼Æ¬µÄÈİÆ÷
+     * @param url       å›¾ç‰‡çš„ç½‘ç»œåœ°å€
+     * @param imageview è¦åŠ è½½å›¾ç‰‡çš„å®¹å™¨
      */
     private void imageLoader(String url, ImageView imageview) {
         ImageLoader.getInstance().displayImage(url, imageview, options);
     }
 
     /**
-     * ×ÔÊÊÓ¦Í¼Æ¬¼ÓÔØ
+     * è‡ªé€‚åº”å›¾ç‰‡åŠ è½½
      *
-     * @param url       Í¼Æ¬µÄÍøÂçµØÖ·
-     * @param imageview Òª¼ÓÔØÍ¼Æ¬µÄÈİÆ÷
-     * @param mPtions   ¼ÓÔØÍ¼Æ¬ÊÇµÄ²ÎÊıÉèÖÃ
+     * @param url       å›¾ç‰‡çš„ç½‘ç»œåœ°å€
+     * @param imageview è¦åŠ è½½å›¾ç‰‡çš„å®¹å™¨
+     * @param mPtions   åŠ è½½å›¾ç‰‡æ˜¯çš„å‚æ•°è®¾ç½®
      */
     private void imageLoaderOptions(String url, ImageView imageview, DisplayImageOptions mPtions) {
         ImageLoader.getInstance().displayImage(url, imageview, mPtions);
     }
 
     /**
-     * Í¼Æ¬¼ÓÔØ Í¼Æ¬´¦Àí
+     * å›¾ç‰‡åŠ è½½ å›¾ç‰‡å¤„ç†
      *
-     * @param url       Í¼Æ¬µÄÍøÂçµØÖ·
-     * @param imageview Òª¼ÓÔØÍ¼Æ¬µÄÈİÆ÷
-     * @param listener  ¼ÓÔØÍê³ÉºóµÄÍ¼Æ¬¼àÌı
+     * @param url       å›¾ç‰‡çš„ç½‘ç»œåœ°å€
+     * @param imageview è¦åŠ è½½å›¾ç‰‡çš„å®¹å™¨
+     * @param listener  åŠ è½½å®Œæˆåçš„å›¾ç‰‡ç›‘å¬
      */
     private void imageLoaderlistener(String url, ImageView imageview, ImageLoadingListener listener) {
         ImageLoader.getInstance().displayImage(url, imageview, options, listener);

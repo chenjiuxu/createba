@@ -2,6 +2,7 @@ package com.example.administrator.createba;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.FIFOLimitedMemoryCache;
@@ -13,12 +14,12 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
  * Created by C.jiuxu on 2015/5/20.
  */
 public class BasisApplication extends Application {
-
-
+    private static Context content;
     @Override
     public void onCreate() {
         super.onCreate();
-        setImageLoader(getContext());
+        content=getApplicationContext();
+        setImageLoader(content);
     }
 
     /**
@@ -26,7 +27,7 @@ public class BasisApplication extends Application {
      * @return 上下文对象
      */
     public static Context getContext() {
-        return getContext();
+        return content;
     }
 
     /**
@@ -34,6 +35,8 @@ public class BasisApplication extends Application {
      * @param context
      */
     public void setImageLoader(Context context) {
+
+        Log.e("什么问题",context.toString());
         // 图像处理
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
                 .threadPriority(Thread.NORM_PRIORITY - 2)

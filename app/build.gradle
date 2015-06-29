@@ -24,12 +24,19 @@ android {
     }
     productFlavors {
     }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+
 }
 allprojects {
     repositories {
         mavenCentral()
     }
 }
+
+
 dependencies {
     //友盟统计
     compile 'com.umeng.analytics:analytics:latest.integration'
@@ -40,7 +47,7 @@ dependencies {
     //okhttp连网
     compile 'com.squareup.okhttp:okhttp:2.3.0'
     //gson网络数据解析
-    compile 'com.google.code.gson:gson:2.3.1'
+    //compile 'com.google.code.gson:gson:2.3.1'
     //推送友盟
     compile files('libs/com.umeng.message.lib_v2.2.0.jar')
     //jackson网络数据解析  http://www.jsonschema2pojo.org/ 实体类生成
